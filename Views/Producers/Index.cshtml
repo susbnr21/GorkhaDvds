@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EverestAlbumLibrary.Models.Producer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover">
+            <tr class="table-success">
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Studio)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Studio)
+                    </td>
+                    <td>
+                        <Button class="btn btn-outline-warning">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</Button> |
+                        <Button class="btn btn-outline-success">@Html.ActionLink("Details", "Details", new { id = item.Id })</Button> |
+                        <Button class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</Button>
+                    </td>
+                </tr>
+            }
+
+        </table>

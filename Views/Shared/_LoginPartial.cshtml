@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav ml-auto">
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Datas
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/producers">Producers</a>
+                <a class="dropdown-item" href="/artists">Artists</a>
+                <a class="dropdown-item" href="/albums">Albums</a>
+                <a class="dropdown-item" href="/artistalbums">Artist Albums</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/loans">Loans</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/members">Members</a>
+                <a class="dropdown-item" href="/membercategories">Member Categories</a>
+            </div>
+        </div>
+        <li class="nav-item mx-1">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn">
+                    @Html.ActionLink(User.Identity.GetUserName() + "", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </button>
+                <button type="button" class="btn btn-outline-secondary" onclick="javascript:document.getElementById('logoutForm').submit()">
+                    Sign Out
+                </button>
+            </div>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right ml-auto">
+        <li class="nav-item mx-1">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li class="nav-item mx-1">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

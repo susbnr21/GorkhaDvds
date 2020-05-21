@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EverestAlbumLibrary.Models.Album>
+
+@{
+    ViewBag.Title = "Task2";
+}
+
+<h2>Task2</h2>
+
+<p>
+    Allow the user to enter or select an actor’s name (Lastname) and see the titles and the
+    number of copies on the shelves of all DVDs for which the Actor is a CastMember and
+    which have at least one copy on the shelves.
+</p>
+
+
+<form method="get" action="/Report/Task2">
+    @Html.DropDownList("Lastname", new SelectList(ViewBag.Lastname, "Lastname", "Lastname"), null, null)
+    <button type="submit">Search</button>
+</form>
+
+@if (Model != null)
+{
+    <table class="table table-hover">
+        <tr class="table-success">
+            <th>
+                @Html.DisplayNameFor(model => model.Tittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleasedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoverImagePath)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tittle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleasedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.length)
+                </td>
+                <td>
+                    <img src=" @Html.DisplayFor(modelItem => item.CoverImagePath)" height="100" width="100" />
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}

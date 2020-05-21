@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EverestAlbumLibrary.Models.ArtistAlbum>
+
+@{
+    ViewBag.Title = "Task4";
+}
+
+<h2>Task4</h2>
+
+<p>
+    List the producer, studio and cast lists of all DVDs in the shop with the DVDs in
+    increasing order of DateReleased, showing the title of each DVD and the names of all
+    the cast members in alphabetic order of last name.
+</p>
+<table class="table table-hover">
+    <tr class="table-success">
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.Tittle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.ReleasedDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Artist.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Artist.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Albums.Tittle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Albums.ReleasedDate)
+    </td>
+
+</tr>
+    }
+
+</table>
