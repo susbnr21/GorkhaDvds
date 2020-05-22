@@ -46,7 +46,7 @@ namespace EverestAlbumLibrary.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Tittle,AlbumDetails,CopyCode,ReleasedDate,length,CoverImagePath,StudioName")] Album album)
+        public ActionResult Create([Bind(Include = "Id,Tittle,AlbumDetails,Charge,AgeRestriction,ReleasedDate,length,CoverImagePath,StudioName")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace EverestAlbumLibrary.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Tittle,AlbumDetails,CopyCode,ReleasedDate,length,CoverImagePath,StudioName")] Album album)
+        public ActionResult Edit([Bind(Include = "Id,Tittle,AlbumDetails,Charge,AgeRestriction,ReleasedDate,length,CoverImagePath,StudioName")] Album album)
         {
             if (ModelState.IsValid)
             {

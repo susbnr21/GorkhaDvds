@@ -5,6 +5,7 @@
 }
 
 <h2>Details</h2>
+
 <div>
     <h4>Loan</h4>
     <hr />
@@ -41,18 +42,9 @@
             @Html.DisplayFor(model => model.ReturnedDate)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CopyNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CopyNumber)
-        </dd>
-
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
-

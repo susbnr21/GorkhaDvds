@@ -16,7 +16,9 @@ namespace EverestAlbumLibrary.Models
         [Required]
         public string AlbumDetails { get; set; }
         [Required]
-        public string CopyCode { get; set; }
+        public int Charge { get; set; }
+        [Required]
+        public string AgeRestriction { get; set; }
         [Required]
         public DateTime ReleasedDate { get; set; }
         [Required]

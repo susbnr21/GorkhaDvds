@@ -15,8 +15,6 @@ namespace EverestAlbumLibrary.Models
         public DateTime IssuedDate { get; set; }
         public DateTime? ReturnedDate { get; set; }
         [Required]
-        public int CopyNumber { get; set; }
-        [Required]
         public int MemberId { get; set; }
         [Required]
         public int AlbumId { get; set; }

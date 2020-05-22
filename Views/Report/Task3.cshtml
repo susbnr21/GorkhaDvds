@@ -23,11 +23,16 @@
     <table class="table table-hover">
         <tr class="table-success">
             <th>
+                @Html.DisplayNameFor(model => model.Members.Name)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Albums.Tittle)
             </th>
-
             <th>
-                @Html.DisplayNameFor(model => model.CopyNumber)
+                @Html.DisplayNameFor(model => model.ArtistAlbums.AlbumId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuedDate)
             </th>
             <th></th>
         </tr>
@@ -36,11 +41,16 @@
         {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Members.Name)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Albums.Tittle)
         </td>
-
         <td>
-            @Html.DisplayFor(modelItem => item.CopyNumber)
+            @Html.DisplayFor(modelItem => item.ArtistAlbums.AlbumId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IssuedDate)
         </td>
 
     </tr>

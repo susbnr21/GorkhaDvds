@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Album</h4>
         <hr />
@@ -32,10 +32,21 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CopyCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Charge, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CopyCode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CopyCode, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Charge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Charge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AgeRestriction, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                Yes
+                @Html.RadioButtonFor(model => model.AgeRestriction, "Yes")
+                No
+                @Html.RadioButtonFor(model => model.AgeRestriction, "No")
+                @Html.ValidationMessageFor(model => model.AgeRestriction, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -86,3 +97,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
